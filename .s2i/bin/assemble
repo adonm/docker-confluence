@@ -3,9 +3,7 @@
 shopt -s dotglob
 echo "---> Downloading and installing kanboard"
 
-curl --silent -Lo atlassian-servicedesk.tar.gz https://downloads.atlassian.com/software/jira/downloads/atlassian-servicedesk-3.7.0.tar.gz
+curl --silent -Lo atlassian-servicedesk.tar.gz https://downloads.atlassian.com/software/jira/downloads/atlassian-servicedesk-3.8.1.tar.gz
 tar xvf atlassian-servicedesk.tar.gz
 mv atlassian-*/* ./; rmdir atlassian-*; rm atlassian-servicedesk.tar.gz
 
-# Fix source directory permissions
-fix-permissions ./
