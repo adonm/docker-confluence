@@ -4,6 +4,12 @@ shopt -s dotglob
 echo "---> Downloading and installing jira servicedesk"
 
 curl --silent -Lo atlassian-servicedesk.tar.gz https://downloads.atlassian.com/software/jira/downloads/atlassian-servicedesk-3.8.1.tar.gz
-tar xvf atlassian-servicedesk.tar.gz
-mv atlassian-*/* ./; rmdir atlassian-*; rm atlassian-servicedesk.tar.gz
+tar xf atlassian-servicedesk.tar.gz
+rsync -av atlassian-jira/ atlassian*standalone/atlassian-jira/
+rsync -av conf/ atlassian*standalone/conf/
+rm -r atlassian-jira conf
+mv atlassian*standalone/* .
+rmdir atlassian*standalone
+mkdir jira-home
+rm atlassian-servicedesk.tar.gz
 
