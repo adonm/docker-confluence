@@ -50,7 +50,7 @@
     -->
     <Service name="Catalina">
 
-        <Connector port="8008"
+        <Connector port="8080"
 
                    maxThreads="150"
                    minSpareThreads="25"
